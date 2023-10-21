@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body style="margin: 30px">
+    <form>
+        1st Number : <input type="text" id="firstNumber" /><br>
+        2nd Number: <input type="text" id="secondNumber" /><br>
+        <input type="button" onClick="multiplyBy()" Value="Multiply" />
+        <input type="button" onClick="divideBy()" Value="Divide" /><br>
+    </form>
+ 
+    <p>The Result is : <br>
+        <span id="result"></span>
+    </p>
+ 
+ 
+    <script>
+        function multiplyBy()
+        {
+          num1 = document.getElementById(
+            "firstNumber").value;
+          num2 = document.getElementById(
+            "secondNumber").value;
+          document.getElementById(
+            "result").innerHTML = num1 * num2;
+        }
+        function divideBy() {
+            num1 = parseFloat(document.getElementById("firstNumber").value);
+            num2 = parseFloat(document.getElementById("secondNumber").value);
+            var resultElement = document.getElementById("result");
+
+            if (isNaN(num1) || isNaN(num2)) {
+                resultElement.innerHTML = "Please enter valid numbers.";
+            } else if (num2 === 0) {
+                resultElement.innerHTML = "Division by zero is not allowed.";
+            } else {
+                resultElement.innerHTML = "Result: " + (num1 / num2);
+            }
+        }
+    </script>
+    <br>
+    <a href="../index.html">Go to back</a>
+</body>
+</html>
